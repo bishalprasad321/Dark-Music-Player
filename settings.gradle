@@ -1,0 +1,2 @@
+rootProject.name = "Dark Music Player"
+include ':app'

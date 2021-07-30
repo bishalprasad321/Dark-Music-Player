@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/musicNametextView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="0.35"
+                android:gravity="center"
+                android:text="@string/dark_title"
+                android:textAllCaps="false"
+                android:textColor="#fefefe"
+                android:textSize="24sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="2"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="true">
+
+                <ImageView
+                    android:id="@+id/trackImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:alpha="0.75"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/musicart" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewMain"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1.8"
+                android:scrollbarFadeDuration="2"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                tools:listitem="@layout/music_playing" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="0.4"
+                android:backgroundTint="#1e1e1e">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#1e1e1e"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/song_image"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.6"
+                        android:paddingLeft="16dp"
+                        android:src="@drawable/musicart"
+                        app:civ_border_color="#1e1e1e"
+                        app:civ_border_width="1dp" />
+
+                    <TextView
+                        android:id="@+id/currentSong"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/lato"
+                        android:gravity="center_vertical"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:paddingLeft="8dp"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:text="song name - artist name - duration - production house"
+                        android:textColor="#fff"
+                        android:textSize="16dp" />
+
+                    <ImageButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:background="#1e1e1e"
+                        android:padding="14dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_play"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@color/line_divider" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="0.7"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:background="@color/black"
+                android:gravity="center"
+                android:padding="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/musicsearch"
+                app:tint="#ffffff"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/mediaLibraryTextView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/lato"
+                android:gravity="center"
+                android:rotation="-90"
+                android:text="Media Library"
+                android:textColor="#fefefe" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:gravity="center"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/onlinemusic"
+                app:tint="#ffffff"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/lato"
+                android:gravity="center"
+                android:rotation="-90"
+                android:text="My Playlists"
+                android:textColor="#fefefe" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.3"
+                android:background="@color/black"
+                android:padding="8dp"
+                android:scaleType="fitEnd"
+                android:src="@drawable/musicstore"
+                app:tint="#ffffff"
+                tools:ignore="SpeakableTextPresentCheck"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="Music Store"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

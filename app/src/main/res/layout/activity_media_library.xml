@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/black"
+    tools:context=".MediaLibraryAcitivty">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:layout_marginStart="5dp">
+
+        <ImageView
+            android:id="@+id/backImageView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:backgroundTint="@color/black"
+            android:gravity="center"
+            android:padding="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back"
+            app:tint="@color/white"
+            android:contentDescription="TODO"
+            tools:targetApi="lollipop" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:rotation="90"
+            android:text="Media Library"
+            android:textColor="#fefefe" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:background="@color/black"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/musicstore"
+            app:tint="#ffffff"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Music Store"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/line_divider" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:background="@color/black"
+            app:tabIndicator="@drawable/indicator_gradient"
+            app:tabIndicatorColor="@color/fragment_theme"
+            app:tabIndicatorFullWidth="true"
+            app:tabIndicatorGravity="center"
+            app:tabIndicatorHeight="40dp"
+            app:tabTextColor="@color/white"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:backgroundTint="#1e1e1e"
+            android:layout_marginBottom="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="#1e1e1e">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/song_image"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:paddingLeft="16dp"
+                    android:src="@drawable/musicart"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="#1e1e1e"/>
+
+                <TextView
+                    android:id="@+id/currentSong"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/lato"
+                    android:gravity="center_vertical"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingLeft="8dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="song name - artist name - duration - production house"
+                    android:textColor="#fff"
+                    android:textSize="16dp" />
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="#1e1e1e"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_play"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

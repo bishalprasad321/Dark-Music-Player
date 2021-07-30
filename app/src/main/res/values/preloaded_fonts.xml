@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/aclonica</item>
+        <item>@font/chivo</item>
+        <item>@font/exo</item>
+        <item>@font/exo_thin</item>
+        <item>@font/lato</item>
+        <item>@font/roboto_medium</item>
+        <item>@font/roboto_thin</item>
+    </array>
+</resources>

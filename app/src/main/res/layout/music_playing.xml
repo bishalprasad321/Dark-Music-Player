@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/black"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/black">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imageCard"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/black"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/songName"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/musicart" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/songName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:fontFamily="@font/lato"
+            android:singleLine="true"
+            android:text="Music Name"
+            android:textColor="#BFFFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@id/artistName"
+            app:layout_constraintLeft_toRightOf="@id/imageCard"
+            app:layout_constraintRight_toLeftOf="@id/animation"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/artistName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:fontFamily="@font/lato"
+            android:singleLine="true"
+            android:text="TextView"
+            android:textColor="#99FFFFFF"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/imageCard"
+            app:layout_constraintRight_toLeftOf="@id/animation"
+            app:layout_constraintTop_toBottomOf="@id/songName" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation"
+            android:layout_width="28dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/songName"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_colorFilter="@color/fragment_theme"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/musicwave" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
