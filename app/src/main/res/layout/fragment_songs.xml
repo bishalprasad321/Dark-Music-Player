@@ -12,8 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
-        android:scrollbarFadeDuration="2"
+        android:scrollbarFadeDuration="1"
         android:scrollbarStyle="insideOverlay"
+        android:layoutAnimation="@anim/layout_animation"
         tools:listitem="@layout/song_lists"/>
 
 </LinearLayout>

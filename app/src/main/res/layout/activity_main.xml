@@ -40,8 +40,8 @@
                 android:gravity="center"
                 android:text="@string/dark_title"
                 android:textAllCaps="false"
-                android:textColor="#fefefe"
-                android:textSize="24sp" />
+                android:textColor="#DEFFFFFF"
+                android:textSize="24dp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -49,7 +49,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="16dp"
                 android:layout_weight="2"
-                app:cardBackgroundColor="@color/black"
+                android:backgroundTint="@color/line_divider"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="10dp"
                 app:cardUseCompatPadding="true">
@@ -59,9 +59,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:alpha="0.75"
                     android:scaleType="centerCrop"
                     android:src="@drawable/musicart" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/album_art_bg"/>
+
             </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -75,6 +79,7 @@
                 android:scrollbarFadeDuration="2"
                 android:scrollbarStyle="insideInset"
                 android:scrollbars="vertical"
+                android:layoutAnimation="@anim/layout_animation"
                 tools:listitem="@layout/music_playing" />
 
             <androidx.cardview.widget.CardView
@@ -96,6 +101,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="0.6"
                         android:paddingLeft="16dp"
+                        android:contentDescription="Song Art"
                         android:src="@drawable/musicart"
                         app:civ_border_color="#1e1e1e"
                         app:civ_border_width="1dp" />

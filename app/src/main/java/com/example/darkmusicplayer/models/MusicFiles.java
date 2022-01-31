@@ -1,5 +1,7 @@
 package com.example.darkmusicplayer.models;
 
+import android.view.View;
+
 public class MusicFiles {
 
     private String path;
@@ -59,4 +61,20 @@ public class MusicFiles {
     public void setAlbum(String album) {
         this.album = album;
     }
+
+
+    public int getAnimation(){
+        if (View.VISIBLE == 1)
+        {
+            return View.GONE;
+        }
+
+        else if (View.VISIBLE != 1)
+        {
+            return View.VISIBLE;
+        }
+
+        return View.GONE;
+    }
+
 }

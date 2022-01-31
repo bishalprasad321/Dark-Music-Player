@@ -3,9 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/layout-v21/activity_media_library.xml" value="0.16221498371335505" />
-        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/layout/activity_main.xml" value="0.176" />
-        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/layout/activity_media_library.xml" value="0.16221498371335505" />
+        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/drawable/album_art_bg.xml" value="0.17401315789473684" />
+        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/drawable/ic_chevron_left.xml" value="0.17401315789473684" />
+        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/drawable/ic_music_note.xml" value="0.17401315789473684" />
+        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/drawable/ic_pause.xml" value="0.17401315789473684" />
+        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/drawable/indicator_gradient.xml" value="0.17401315789473684" />
+        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/layout-v21/activity_media_library.xml" value="0.16" />
+        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/layout/activity_main.xml" value="0.16221498371335505" />
+        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/layout/activity_media_library.xml" value="0.16" />
+        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/layout/activity_song_player.xml" value="0.16381578947368422" />
+        <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/layout/activity_splash.xml" value="0.12569444444444444" />
         <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/layout/fragment_songs.xml" value="0.16221498371335505" />
         <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/layout/music_playing.xml" value="0.16221498371335505" />
         <entry key="..\:/Users/Bishal/AndroidStudioProjects/DarkMusicPlayer/app/src/main/res/layout/song_lists.xml" value="0.16" />

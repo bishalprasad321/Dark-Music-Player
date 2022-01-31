@@ -6,23 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.darkmusicplayer.fragments.AlbumFragment;
 import com.example.darkmusicplayer.fragments.SongsFragment;
-import com.example.darkmusicplayer.models.MusicFiles;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -30,18 +23,37 @@ import static com.example.darkmusicplayer.MainActivity.musicFiles;
 
 import static com.example.darkmusicplayer.MainActivity.fetchSongs;
 
-public class MediaLibraryAcitivty extends AppCompatActivity {
+import de.hdodenhof.circleimageview.CircleImageView;
+
+public class MediaLibraryActivity extends AppCompatActivity {
 
     ImageView back;
-    TextView currentSong;
+    TextView currentSongPlaying;
+    CircleImageView musicImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_library);
 
-        currentSong = findViewById(R.id.currentSong);
-        currentSong.setSelected(true);
+        currentSongPlaying = findViewById(R.id.currentSong2);
+        currentSongPlaying.setSelected(true);
+        currentSongPlaying.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MediaLibraryActivity.this, SongPlayerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        musicImage = findViewById(R.id.song_image_media_library);
+        musicImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MediaLibraryActivity.this, SongPlayerActivity.class);
+                startActivity(intent);
+            }
+        });
 
         back = findViewById(R.id.backImageView);
         back.setOnClickListener(new View.OnClickListener() {

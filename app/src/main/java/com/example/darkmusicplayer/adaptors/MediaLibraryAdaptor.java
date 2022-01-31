@@ -1,7 +1,10 @@
 package com.example.darkmusicplayer.adaptors;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaMetadataRetriever;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.darkmusicplayer.SongPlayerActivity;
 import com.example.darkmusicplayer.models.MusicFiles;
 import com.example.darkmusicplayer.R;
 
@@ -38,7 +42,7 @@ public class MediaLibraryAdaptor extends RecyclerView.Adapter<MediaLibraryAdapto
     }
 
     @Override
-    public void onBindViewHolder(@NonNull viewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull viewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         holder.songText.setText(songList.get(position).getTitle());
 
@@ -53,8 +57,17 @@ public class MediaLibraryAdaptor extends RecyclerView.Adapter<MediaLibraryAdapto
         }
         else
         {
-            Glide.with(context).load(R.drawable.musicart).into(holder.imageView);
+            Glide.with(context).load(R.drawable.ic_music_note).into(holder.imageView);
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SongPlayerActivity.class);
+                intent.putExtra("position", position);
+                context.startActivity(intent);
+            }
+        });
 
     }
 

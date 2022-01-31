@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DarkMusicPlayer">
         <activity
-            android:name=".MediaLibraryAcitivty"
+            android:name=".SongPlayerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MediaLibraryActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
@@ -28,7 +31,7 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"

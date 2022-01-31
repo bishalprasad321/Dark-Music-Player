@@ -54,7 +54,8 @@
                 android:paddingBottom="8dp"
                 android:singleLine="true"
                 android:text="Song Name"
-                android:textColor="#BFFFFFFF"
+                android:textColor="@color/white"
+                android:alpha="0.87"
                 android:textSize="15dp" />
 
             <TextView
@@ -67,19 +68,11 @@
                 android:paddingTop="8dp"
                 android:singleLine="true"
                 android:text="Artist Name"
-                android:textColor="#99FFFFFF"
+                android:textColor="@color/white"
+                android:alpha="0.6"
                 android:textSize="12dp" />
 
         </LinearLayout>
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            app:lottie_autoPlay="true"
-            app:lottie_colorFilter="@color/fragment_theme"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/musicwave" />
 
         <TextView
             android:id="@+id/durationText"
@@ -89,7 +82,8 @@
             android:layout_weight="0.2"
             android:gravity="center"
             android:text="0:00"
-            android:textColor="#99FFFFFF"
+            android:textColor="@color/white"
+            android:alpha="0.38"
             android:textSize="12dp" />
 
     </LinearLayout>

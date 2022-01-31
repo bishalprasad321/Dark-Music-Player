@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.darkmusicplayer.R;
 import com.example.darkmusicplayer.adaptors.MediaLibraryAdaptor;
 
+import static com.example.darkmusicplayer.MainActivity.fetchSongs;
 import static com.example.darkmusicplayer.MainActivity.musicFiles;
 
 /**

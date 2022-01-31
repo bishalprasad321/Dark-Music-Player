@@ -29,10 +29,13 @@ import com.karumi.dexter.listener.single.PermissionListener;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView nowPlaying, currentSong, mediaLibrary;
     RecyclerView recyclerView;
+    CircleImageView imageSong;
 
     SongAdaptor musicAdaptor;
 
@@ -46,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
         nowPlaying = findViewById(R.id.musicNametextView);
         recyclerView = findViewById(R.id.recyclerViewMain);
+        imageSong = findViewById(R.id.song_image);
+        imageSong.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SongPlayerActivity.class);
+            startActivity(intent);
+        });
 
         Typeface title = Typeface.createFromAsset(getAssets(), "fonts/danube.ttf");
         nowPlaying.setTypeface(title);
@@ -54,13 +62,21 @@ public class MainActivity extends AppCompatActivity {
         mediaLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MediaLibraryAcitivty.class);
+                Log.d("Click", "Clicked!");
+                Intent intent = new Intent(MainActivity.this, MediaLibraryActivity.class);
                 startActivity(intent);
             }
         });
 
         currentSong = findViewById(R.id.currentSong);
         currentSong.setSelected(true);
+        currentSong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SongPlayerActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Dexter.withContext(this)
                 .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -72,9 +88,9 @@ public class MainActivity extends AppCompatActivity {
 
                         if (!(musicFiles.size() < 1))
                         {
-                            musicAdaptor = new SongAdaptor(musicFiles, getApplicationContext());
+                            musicAdaptor = new SongAdaptor(musicFiles, MainActivity.this);
                             recyclerView.setAdapter(musicAdaptor);
-                            recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+                            recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false));
                         }
                     }
 
@@ -112,9 +128,6 @@ public class MainActivity extends AppCompatActivity {
                 String album = cursor.getString(4);
 
                 MusicFiles musicFiles = new MusicFiles(path, artist, duration, title, album);
-
-                // log.e
-                Log.e("Path" + path, "Album" + album);
 
                 songList.add(musicFiles);
             }

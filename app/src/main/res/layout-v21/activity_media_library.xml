@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:background="@color/black"
-    tools:context=".MediaLibraryAcitivty">
+    tools:context=".MediaLibraryActivity">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -25,9 +25,8 @@
             android:backgroundTint="@color/black"
             android:gravity="center"
             android:padding="16dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/back"
-            app:tint="@color/white"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_chevron_left"
             android:contentDescription="TODO" />
 
         <TextView
@@ -38,7 +37,8 @@
             android:gravity="center"
             android:rotation="90"
             android:text="Media Library"
-            android:textColor="#fefefe" />
+            android:textColor="@color/white"
+            android:alpha="0.6"/>
 
         <ImageButton
             android:layout_width="match_parent"
@@ -59,7 +59,8 @@
             android:gravity="center"
             android:padding="5dp"
             android:text="Music Store"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:alpha="0.87"/>
 
     </LinearLayout>
 
@@ -110,7 +111,7 @@
                 android:background="#1e1e1e">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/song_image"
+                    android:id="@+id/song_image_media_library"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.6"
@@ -120,7 +121,7 @@
                     app:civ_border_color="#1e1e1e"/>
 
                 <TextView
-                    android:id="@+id/currentSong"
+                    android:id="@+id/currentSong2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
@@ -134,7 +135,8 @@
                     android:scrollHorizontally="true"
                     android:singleLine="true"
                     android:text="song name - artist name - duration - production house"
-                    android:textColor="#fff"
+                    android:textColor="@color/white"
+                    android:alpha="0.87"
                     android:textSize="16dp" />
 
                 <ImageButton
